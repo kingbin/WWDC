@@ -1,10 +1,12 @@
 os: osx
 osx_image: xcode9.2
-
 before_install:
   - brew bundle
   - bundle install
-
 script:
   - ./bootstrap.sh
   - xcodebuild -scheme WWDC -project WWDC.xcodeproj | xcpretty
+env:
+  global:
+    # Variable added per the suggestion here https://github.com/Carthage/Carthage/issues/1236#issuecomment-205215986
+    - secure: PndZXfdTU6Qyc2oCDMzoMNRDdgfsJC+k0/bPx9HZMH/SvpBSB1z2AHwuBqJtthHSyaaaH7n3USIDXK2jBSEZzbLhoCA3/eVhE5K8yTq85U4vSUjh4DQpWU/Nhf344+htJeRIsIeAJm7eJRrsJIWWBeCw1xaFdsrxcaGtWaXvQi8uPtsEiUFLhvSC/RWqLGY5v4CzH/A/tJhjttedOS50llLT8TZGjQxwLl77v8ywGp4NvPKs58t7iL2dNT9V79ai8295NEIn9tyfBGOUoPmxI7Itjwp3um32VCPeMDP8cma8WuE6408RasVFQpyWPSb0si6GFW5cjbGpyzFkydwZRzzhTrnzI19Rtz0pzQ6rxmhUN8aeFsWCIx/3NFXukyhGwMvd8sKSZRsOOUwHbgWEGYt0jjMcuj6+EvsjuBLRnc4JOqH+sg66It8O/wMiz1dBGMpADcGBPs7bORU18qAFqbYiyAEghk1t8aqprYuSX+V4wCqB5wH538v+VFZn35T9YHihLMv72BAPGuixxbFYzQbNyLaG3D/keorIS5+gRFSIloTx41kHxhbY4nFiivPQRLz4rkNZMCWWQNhmBcnqStRVjgjETp7lwJrxWQV8oQHVc+rpS5M/FXNM9yAHyDLwJGlTZjHIsvSCIUPmM4Vw0H3eibHWviLie50rbcsZQHs=
