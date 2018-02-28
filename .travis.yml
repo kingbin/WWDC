@@ -1,8 +1,10 @@
-language: objective-c
 os: osx
 osx_image: xcode9.2
-xcode_project: WWDC.xcodeproj
-xcode_scheme: WWDC
 
 before_install:
   - brew install swiftlint
+  - brew install xcpretty
+
+script:
+  - ./bootstrap.sh
+  - xcodebuild -scheme WWDC -project WWDC.xcodeproj | xcpretty
